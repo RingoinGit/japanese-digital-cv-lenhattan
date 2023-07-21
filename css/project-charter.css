@@ -1,0 +1,42 @@
+/* LINK DỰ ÁN TRONG TRANG CV RA MỘT TRANG KHÁC:
+ TẠO 1 TRANG CHARTER MẪU SAU ĐÓ SCALE RA 2 TRANG CÒN LẠI VÀ THAY ĐỔI NỘI DUNG CHO PHÙ HỢP
+KẾT HỢP SỬ DỤNG BOOTSTRAP VÀ CHUNG 1 FILE CSS NÀY */
+
+/* cANH CHỈNH CÁC KHỐI TRÊN MÀN HÌNH LỚN */
+.waku {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  row-gap: 1rem;
+}
+
+/* CANH CHỈNH CÁC PHẦN TỬ SỐ TRONG KHỐI TIMELINE */
+span {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+/* KẺ BORDER CHO CÁC KHỐI */
+.goals,
+.scopes,
+.team,
+.primary,
+.timeline {
+  border: 1px solid #9f9f9f;
+}
+
+/* CHỈNH LẠI FOOTER CHO DỄ NHÌN XÍU */
+.footer {
+  padding: 0.5rem 0;
+  justify-content: center;
+}
+.footer .row div:link,
+.footer .row div:visited {
+  color: #8080809e;
+}
+.footer .row div:hover,
+.footer .row div:active {
+  background-color: #9f9f9f;
+  font-size: large;
+  cursor: pointer;
+}

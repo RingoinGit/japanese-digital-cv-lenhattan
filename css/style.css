@@ -1,0 +1,469 @@
+* {
+  /*Xóa các thuộc tính cho toàn trang*/
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+  box-sizing: border-box;
+}
+/* Thêm font từ folder vào để sử dụng, đã chọn và tải font từ google font */
+@font-face {
+  font-family: "fira_sans";
+  src: url("../fonts/FiraSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Cài một số thuộc tính cho trang và thẻ body, thắc mắc tại sao lại để chiều rộng cố định là 1170px */
+body {
+  font-family: "fira_sans";
+  font-size: 13pt;
+  display: grid;
+  width: 1170px;
+  line-height: 1.6;
+  margin: auto;
+}
+/* Đặt màu cho class màu nền */
+.bg-grey {
+  background: #f7f7f7;
+}
+.bg-blue {
+  background: #199cdb;
+}
+/* Toàn bộ class container sẽ cho biến thành grid */
+.container {
+  /* width: 1170px; */
+  margin: 0;
+  display: grid;
+}
+/* Thiết lập cách hàng cho tiêu đề */
+.content-title {
+  padding: 5% 0;
+}
+
+/* -----------------BANNER ẢNH NỀN ----------------------*/
+/* Cài đặt banner, ảnh nền đầu trang */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.banner-img {
+  width: 100%;
+  height: auto;
+}
+.banner-title {
+  position: absolute;
+  color: #d9e0e9;
+  line-height: 1.7;
+  top: 17%;
+}
+.banner-title h1 {
+  font-size: 34pt;
+}
+
+/* -----------NAVIGATE BAR - THANH ĐIỀU HƯỚNG -----------*/
+/* Chỗ này khá rắc rối khi làm, border giữa 2 phần tử bị làm đậm vẫn chưa biết cách giải quyết */
+.nav-bar .container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.nav-bar .nav-link {
+  text-transform: uppercase;
+  padding: 20px 10px;
+  margin: 0px;
+  width: auto;
+  border-left: 1px solid #8080804e;
+  border-right: 1px solid #8080804e;
+}
+.nav-bar a:link,
+.nav-bar a:visited {
+  color: #199cdb;
+  text-decoration: none;
+}
+.nav-bar a:hover,
+.nav-bar a:active {
+  padding: 20px 10px;
+  color: #f7f7f7f1;
+  cursor: pointer;
+  background-color: #8080804e;
+}
+/* Ô này sẽ để chứa ảnh cá nhân cho phần nâng cao */
+.nav-bar .container .avt-img {
+  width: 300px;
+  /* text-align: center; */ /*Dùng cho chữ, không phải avatar*/
+  /* line-height: 1;
+  font-size: 19pt;
+  align-self: center;
+  justify-self: center; */
+}
+/* .nav-bar .container .blank span {
+  color: #8080808a;
+  font-size: 12pt;
+} */
+
+/* -----------MỤC TIÊU - THÔNG TIN CÁ NHÂN -----------*/
+/* Bố cục grid cho phần mục tiêu và thông tin các nhân */
+.about .container {
+  grid-template-columns: 50% 50%;
+  align-content: start;
+  justify-content: center;
+  word-wrap: break-word;
+  padding: 0;
+}
+.target {
+  padding: 5%;
+}
+.personal-info {
+  background-color: #80808019;
+  padding: 5%;
+}
+.info {
+  padding-bottom: 10%;
+}
+/* In đậm các chỉ mục của thông tin cá nhân */
+.info span {
+  font-weight: bold;
+}
+/* Tô màu cho các icon liên kết tài khoản mạng xã hội */
+.social-link i {
+  color: #199cdb;
+}
+
+/* -----------JOB INFO - THÔNG TIN KỸ NĂNG -----------*/
+/* Bố cục grid cho các mục năng lục bản thân */
+.job-info .container {
+  padding: 2%;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 2%;
+}
+/* Icon bên phải tiêu đề cac mục */
+.job-info .content-icon {
+  font-size: 40pt;
+  color: #8080808a;
+  text-align: center;
+  align-self: center;
+}
+/* Cho phần nội dung chiếm 2 cột grid */
+.job-info .content-list {
+  grid-column: 1/3;
+  padding-left: 0.5rem;
+}
+/* Thay thế bullet point - Đoạn này khá tốn thời gian tìm hiểu và ôn lại bài để căn chỉnh bullet point vào giữa hàng*/
+.job-info .list-title::before {
+  content: "\2022";
+  color: #199cdb;
+  font-size: bolder;
+  font-size: 45pt;
+  display: inline-flex;
+  position: relative;
+  margin-right: 0.5rem;
+  top: 0.7rem;
+}
+/* in đậm các tiêu đề nhỏ */
+.job-info .list-title {
+  font-weight: bold;
+}
+.job-info .list-details {
+  padding-left: 1rem;
+}
+
+/* Thiết lập riêng cho dòng thời gian */
+.job-info .time {
+  font-style: italic;
+  font-size: 11pt;
+  display: inline-flex;
+  margin: 5px;
+  gap: 5px;
+}
+/* Tô màu và làm tròn border cho chữ Hiện Tại */
+.job-info .time span {
+  text-align: center;
+  width: 60pt;
+  background-color: #199cdb;
+  color: #f7f7f7;
+  border-radius: 6pt;
+}
+
+/* BẮt đầu đi vào chi tiết từng ô mục - bắt đầu bằng kẻ viền, ô nào cần chỉnh thêm thì làm phần đó, ô nào oke thì thôi*/
+.experience,
+.education,
+.activate,
+.hobby,
+.language,
+.skill {
+  border: 1px solid #8080808a;
+  padding: 3%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-content: start;
+}
+
+/* Cấu trúc lại ô sở thích để sắp xếp các icon và chữ */
+.hobby .content-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+/* Làm viền tròn cho các icon */
+.hobby .content-list i {
+  /* width: 100%; */
+  font-size: 13pt;
+  color: #199cdb;
+  padding: 20px 12px;
+  border: 1px solid #199cdb;
+  border-radius: 50%;
+}
+/* Riêng 2 icon giữa thì bị lệch tâm, không tìm được cách căn chỉnh chung 
+- khá tốn thời gian tìm hiểu cho việc này-kết quả vẫn phải tách là riêng */
+.hobby .content-list i:nth-child(2),
+.hobby .content-list i:nth-child(3) {
+  padding: 20px;
+}
+.hobby .hobby-list {
+  font-size: 10pt;
+}
+
+/* Thiết lập thanh màu cho ô mục ngôn ngữ , kỹ năng, màu xám nhìn khá sáng- khó nhìn thấy nhưng đề bài yêu cầu nên để nguyên */
+.language .content-list,
+.skill .content-list {
+  grid-column: 1/2;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  justify-content: space-between;
+}
+.language .content-list li,
+.skill .content-list li {
+  grid-column: 1/-1;
+  margin-bottom: 10px;
+}
+.language .content-list span,
+.skill .content-list span {
+  height: 3px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* -----------CHỨNG CHỈ - GIẢI THƯỞNG-----------*/
+/* Ảnh bị quá to, không chịu vừa khít với grid. Không hiểu tại sao =>Tốn khá nhiều thời gian để tìm hiểu cách cho ảnh vừa với grid. 
+Vẫn không hiểu vì sao ảnh bị như vậy. Nếu cài đặt kích thước sẵn trong html hoặc css thì oke, nhưng chắc là có cách khá hiệu quả hơn đối với hiển thị trên mobile*/
+.certificate .container {
+  justify-content: center;
+  align-items: start;
+  /*   padding: 30px 70px; */
+}
+/* .certificate img {
+  max-width: 100%;
+  min-width: 0px;
+  height: auto;
+} */
+
+/* ASM03 Tập sử dụng bootsrap cho phần này nên tắt đi */
+/* .certificate .content-title {
+  grid-column: 1/-1;
+  padding: 0;
+  margin: 0;
+} */
+/* .certificate .content-list {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: space-between;
+} */
+/* Kẻ border , dàn grid dưới để kẻ border cho hết chiều rộng*/
+/* .certificate .content-list:nth-child(2) {
+  border-right: 2px solid #d6c08d;
+}
+.certificate .content-list:nth-child(4) {
+  border-top: 2px solid #d6c08d;
+  grid-column: 1/-1;
+  grid-template-columns: 1fr 5fr;
+  padding-top: 40px;
+} */
+/* .certificate .list-title {
+  font-weight: bold;
+  text-transform: uppercase;
+} */
+/* Đặt khối chứa hình ảnh vào grid cột đầu tiên kéo dài 5 hàng */
+/* .certificate .list-img {
+  grid-column: 1/2;
+  grid-row: 1/6;
+} */
+/* KHối nội dung thì cho từ cột 2 đến hết */
+/* .certificate .content-list li {
+  grid-column: 2/-1;
+  padding-left: 10px;
+} */
+
+/* -----------PROJECT - DỰ ÁN----------*/
+/* Chia khối dự án ra 3 cột 2 dòng */
+.project .container {
+  gap: 5%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+  padding: 5%;
+  border-bottom: 1px solid #8080804e;
+}
+/* Cho vừa ảnh vào grid */
+.project img {
+  background-size: cover;
+  max-width: 100%;
+  min-width: 0px;
+  height: auto;
+}
+/* Phần mô tả cho vào hàng 2 và chia nhỏ grid tiếp */
+.project .content-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  align-content: start;
+}
+/* Cho tên các dự án(CV, trang web ...) và tiêu mục DỰ ÁN dàn thành 1 hàng */
+.project .content-title,
+.project .list-img,
+.project .list-title,
+.project .list-sub-title {
+  grid-column: 1/-1;
+}
+/* In đậm tên dự án */
+.project .list-title {
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid #8080804e;
+}
+/* KHối 3 phần tử dưới tên dự án, cho thành flex và căn chỉnh */
+.project .list-sub-title {
+  border: 1px solid #8080804e;
+}
+.project .list-sub-title i {
+  color: #8080809e;
+}
+/* Tô màu và bo viền cho số năm */
+.project .list-sub-title .project-year {
+  background-color: #199cdb;
+  /* border-radius: 20px; */
+  color: #f7f7f7;
+}
+/* Khối Mô tả , nhiệm vụ, công nghệ, vì chia ra nhiều khối nhỏ nên tô viền xong sẽ cần xóa bớt */
+.project .container .list-details {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto;
+}
+.g-1,
+.g-2 {
+  border: 1px solid #8080804e;
+  font-size: 12pt;
+  padding: 7px;
+  margin: 0;
+}
+
+.g-1 {
+  grid-column: 1/2;
+  border-right: none;
+}
+.g-2 {
+  grid-column: 2/-1;
+  border-left: none;
+}
+
+/* -----------FOOTER - CONTACT----------*/
+/* Làm phần footer, ban đầu không hiểu tại sao đã chia 3 cột 1 hàng rồi mà cả 3 khối đều nằm trong 1 cột 
+Hóa ra là quên đặt class footer nhưng vẫn cứ mải miết gọi tên .footer*/
+.footer .container {
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr;
+  font-size: 150%;
+  gap: 5%;
+  align-content: center;
+  justify-content: center;
+}
+.footer .container div {
+  padding: 10px;
+}
+.footer .container a {
+  color: #8080809e;
+  text-decoration: none;
+  font-size: medium;
+  display: inline-block;
+  padding-bottom: 5%;
+}
+.footer .container i {
+  display: inline-block;
+  color: #199cdb;
+  font-size: 110%;
+}
+.footer .container div:link,
+.footer .container div:visited {
+  color: #8080809e;
+}
+.footer .container div:hover,
+.footer .container div:active {
+  background-color: #8080804e;
+  cursor: pointer;
+}
+
+/* -----------PHẦN NÂNG CAO- THÊM ẢNH CÁ NHÂN----------*/
+/* Thêm ảnh vào HTML */
+/* Căn chỉnh ảnh vào giữa nav-bar */
+.nav-bar .avt-img {
+  display: flex;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar .avt-img img {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  border: 9px solid #fff;
+  border-radius: 50%;
+}
+
+/* Điền một số thông tin cá nhân vào cv, 
+Photoshop hình ảnh có tên liên quan
+Còn lại giữ nguyênthông tin mẫu */
+
+/*asm03 tạo khối nhập email*/
+/* Đặt thuộc tính ẩn cho các class cần ẩn */
+.personal-info .hidden,
+.job-info .hidden {
+  display: none;
+}
+
+/* Bật tắt nút viewmore khi di chuột và các khối job-info */
+/* Lồng tiêu đề vào button mới */
+.container .hover-mouse {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  cursor: default;
+  position: relative;
+  /* border-bottom: 1px solid #d6c08d; */
+}
+/* button viewmore */
+.job-info .viewmore-btn {
+  font-size: small;
+  display: none;
+  cursor: pointer;
+}
+/* xử lý khi di chuột vào tiêu đề khung tạo hiệu ứng ẩn hiện nút viewmore*/
+.hover-mouse:hover + .viewmore-btn,
+.viewmore-btn:hover {
+  display: block;
+}

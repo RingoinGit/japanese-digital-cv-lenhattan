@@ -1,0 +1,44 @@
+/* Small devices (landscape phones, less than 768px) */
+@media screen and (max-width: 767.98px) {
+  /* body {
+    width: 560px;
+  } */
+  .nav-bar .container {
+    display: grid;
+    justify-content: start;
+    margin-bottom: 5%;
+  }
+  .nav-bar .nav-link {
+    display: block;
+    width: 100%;
+    border: none;
+    block-size: 20px;
+  }
+  .job-info .container,
+  .about .container,
+  .project .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  /* Kẻ border cho khối certificate */
+  .certificate .top-block {
+    border-bottom: none !important;
+  }
+  .certificate .content-list {
+    border-right: none !important;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #d6c08d;
+  }
+  */
+  /* .certificate .content-list {
+    border-bottom: 1px solid #d6c08d;
+    padding-bottom: 20px;
+  }
+
+  /* Kẻ border cho khối project */
+  .project .content-list {
+    padding-bottom: 5%;
+    border-bottom: 1px solid #d6c08d;
+  }
+}
